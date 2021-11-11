@@ -213,16 +213,16 @@ void right (){
  //fl rl 130
  //fr rr 60
  //stand
- front_right.write(60);
+ front_right.write(120);
  delay(150);
 
- rear_right.write(60);
+ rear_right.write(120);
  delay(150);
 
- front_left.write(130);
+ front_left.write(70);
  delay(150);
 
- rear_left.write(130);
+ rear_left.write(70);
  delay(150);
 
 
@@ -236,16 +236,16 @@ void left (){
  //fr 120, delay 100, rr 120, delay 100
  //stand
 
- front_left.write(50);
+ front_left.write(60);
  delay(150);
 
- rear_left.write(50);
+ rear_left.write(60);
  delay(150);
 
- front_right.write(120);
+ front_right.write(110);
  delay(150);
 
- rear_right.write(120);
+ rear_right.write(110);
  delay(150);
 
  stand();
