@@ -203,7 +203,7 @@ void walk (){
  rear_left.write(60);
  
 }
-void left (){
+void right (){
 delay (150);
  rear_right.write(100);
  front_left.write(100);
@@ -215,15 +215,15 @@ delay (150);
  front_right.write(95);
  front_left.write(95);
 }
-void right (){
+void left (){
 delay (150);
- rear_right.write(130);
- rear_left.write(130);
- front_right.write(130);
- front_left.write(130);
+ rear_right.write(95);
+ rear_left.write(95);
+ front_right.write(95);
+ front_left.write(95);
 delay (150);
- rear_right.write(150);
- front_left.write(150);
- rear_left.write(150);
- front_right.write(150);
+ rear_right.write(100);
+ front_left.write(100);
+ rear_left.write(100);
+ front_right.write(100);
 }
