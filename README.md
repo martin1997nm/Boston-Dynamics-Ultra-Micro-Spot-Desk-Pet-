@@ -6,10 +6,11 @@ so if you have suggestions or want to take part in the development feel free to 
 
 ## You will need
 
-- Wemos D1 mini
+- ESP 32
 - Passive buzzer
 - Microswitch
+- IR Sensor
 - Eachine E58 Drone battery (it has an integrated BMS and I had 5 lying around)
-- 4 pieces of 9gram servos(I used metal geared but you can use plastic geared)
+- 8 pieces of 9gram servos(I used metal geared but you can use plastic geared)
 - Soldering iron, wires, standard 1.54 pin headers
 - Screwdriver
