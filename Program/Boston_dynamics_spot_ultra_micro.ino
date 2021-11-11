@@ -194,37 +194,38 @@ void pit (){
 
 void walk (){
  tone(Passive_buzzer, 523) ; //DO note 523 Hz
- delay (100);
+ delay (200);
  digitalWrite(Passive_buzzer,HIGH);
  front_left.write(90);  front_right.write(90);  
  rear_left.write(90);  rear_right.write(90);
- delay (100);
+ delay (200);
  front_left.write(50);
- delay (100);
+ delay (200);
  rear_right.write(110);
- delay (100);
+ delay (200);
  front_right.write(130);
- delay (100);
+ delay (200);
  rear_left.write(60);
 }
 
 void right (){
- delay (100);
+ delay(150);
  //fl rl 130
  //fr rr 60
  //stand
-
- front_left.write(130);
- delay(100);
-
- rear_left.write(130);
- delay(100);
-
  front_right.write(60);
- delay(100);
+ delay(150);
 
  rear_right.write(60);
- delay(100);
+ delay(150);
+
+ front_left.write(130);
+ delay(150);
+
+ rear_left.write(130);
+ delay(150);
+
+
 
  stand();
 }
@@ -236,16 +237,16 @@ void left (){
  //stand
 
  front_left.write(50);
- delay(100);
+ delay(150);
 
  rear_left.write(50);
- delay(100);
+ delay(150);
 
  front_right.write(120);
- delay(100);
+ delay(150);
 
  rear_right.write(120);
- delay(100);
+ delay(150);
 
  stand();
 }
