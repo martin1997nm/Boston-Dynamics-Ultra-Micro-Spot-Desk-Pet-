@@ -122,6 +122,7 @@ void setup() {
   tone(13, 220, 900);
   digitalWrite(Passive_buzzer,HIGH);
 }
+
 void loop() {
    if (TOP == TOPIC) {if(DAT == "0"){DAT="1";sit();}}
    if (TOP == TOPIC1){if(DAT == "0"){DAT="1";stand();}}
@@ -136,7 +137,6 @@ void loop() {
    if (TOP == TOPIC10){if(DAT == "0"){DAT="1";pit();}}
    if (TOP == TOPIC11){if(DAT == "0"){DAT="1";getup();}}
     delay(300);
-    
 }
 
 void getup(){
@@ -148,6 +148,7 @@ void getup(){
  rear_left.write(90);   rear_right.write(90);
  digitalWrite(Passive_buzzer,HIGH);
 }
+
 void stand (){
  tone(Passive_buzzer, 659) ;
  front_left.write(90);   front_right.write(90);  
@@ -155,6 +156,7 @@ void stand (){
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
+
 void sit (){ 
  tone(Passive_buzzer, 587) ;
  front_left.write(30);   front_right.write(150);  
@@ -162,6 +164,7 @@ void sit (){
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
+
 void lay (){ 
  tone(Passive_buzzer, 587) ;
  front_left.write(0);   front_right.write(180);  
@@ -169,6 +172,7 @@ void lay (){
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
+
 void pit (){ 
  tone(Passive_buzzer, 587) ;
  front_left.write(90);   front_right.write(90);  
@@ -187,6 +191,7 @@ void pit (){
  rear_left.write(180);   rear_right.write(30);
  digitalWrite(Passive_buzzer,HIGH);
 }
+
 void walk (){
  tone(Passive_buzzer, 523) ; //DO note 523 Hz
  delay (100);
@@ -201,27 +206,35 @@ void walk (){
  front_right.write(130);
  delay (100);
  rear_left.write(60);
- 
 }
+
 void right (){
 delay (150);
- rear_right.write(100);
- front_left.write(100);
- rear_left.write(100);
- front_right.write(100);
+
+ rear_right.write(110);
+ front_left.write(110);
+ rear_left.write(110);
+ front_right.write(110);
+
 delay (150);
- rear_right.write(95);
- rear_left.write(95);
- front_right.write(95);
- front_left.write(95);
+
+ rear_right.write(85);
+ rear_left.write(85);
+ front_right.write(85);
+ front_left.write(85);
 }
+
+
 void left (){
 delay (150);
+ 
  rear_right.write(95);
  rear_left.write(95);
  front_right.write(95);
  front_left.write(95);
+
 delay (150);
+ 
  rear_right.write(100);
  front_left.write(100);
  rear_left.write(100);
