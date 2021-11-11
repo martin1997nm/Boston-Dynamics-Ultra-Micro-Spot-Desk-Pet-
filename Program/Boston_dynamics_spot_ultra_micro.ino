@@ -209,34 +209,43 @@ void walk (){
 }
 
 void right (){
-delay (150);
+ delay (100);
+ //fl rl 130
+ //fr rr 60
+ //stand
 
- rear_right.write(110);
- front_left.write(110);
- rear_left.write(110);
- front_right.write(110);
+ front_left(130);
+ delay(100);
 
-delay (150);
+ rear_left(130);
+ delay(100);
 
- rear_right.write(85);
- rear_left.write(85);
- front_right.write(85);
- front_left.write(85);
+ front_right(60);
+ delay(100);
+
+ rear_right(60);
+ delay(100);
+
+ stand();
 }
 
-
 void left (){
-delay (150);
- 
- rear_right.write(95);
- rear_left.write(95);
- front_right.write(95);
- front_left.write(95);
+ delay (100);
+ //fl 50, delay 100, rl 50, delay 100
+ //fr 120, delay 100, rr 120, delay 100
+ //stand
 
-delay (150);
- 
- rear_right.write(100);
- front_left.write(100);
- rear_left.write(100);
- front_right.write(100);
+ front_left(50);
+ delay(100);
+
+ rear_left(50);
+ delay(100);
+
+ front_right(120);
+ delay(100);
+
+ rear_right(120);
+ delay(100);
+
+ stand();
 }
