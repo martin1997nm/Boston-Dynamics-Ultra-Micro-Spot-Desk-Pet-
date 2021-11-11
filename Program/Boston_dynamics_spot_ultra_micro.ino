@@ -22,10 +22,10 @@ String TOPIC10 = "/pit";
 String TOPIC11 = "/getup"; 
 
 const unsigned char Passive_buzzer = 13;
-Servo rr;
-Servo rl;
-Servo fl;
-Servo fr;
+Servo rear_right;
+Servo rear_left;
+Servo front_left;
+Servo front_right;
 
 class myMQTTBroker: public uMQTTBroker
 {
@@ -85,10 +85,10 @@ void setup() {
  digitalWrite(Passive_buzzer,HIGH);
 
  Serial.begin(115200);
-  rr.attach(0);
-  rl.attach(2);
-  fl.attach(4);
-  fr.attach(5);
+  rear_right.attach(0);
+  rear_left.attach(2);
+  front_left.attach(4);
+  front_right.attach(5);
 
    // Start WiFi
   if (WiFiAP)
@@ -128,10 +128,10 @@ void loop() {
    if (TOP == TOPIC2){if(DAT == "0"){walk();}}
    if (TOP == TOPIC3){if(DAT == "0"){left();}}
    if (TOP == TOPIC4){if(DAT == "0"){right();}}
-   if (TOP == TOPIC5) {rr.write(DAT.toInt());}
-   if (TOP == TOPIC6) {rl.write(DAT.toInt());}
-   if (TOP == TOPIC7) {fl.write(DAT.toInt());}
-   if (TOP == TOPIC8) {fr.write(DAT.toInt());}
+   if (TOP == TOPIC5) {rear_right.write(DAT.toInt());}
+   if (TOP == TOPIC6) {rear_left.write(DAT.toInt());}
+   if (TOP == TOPIC7) {front_left.write(DAT.toInt());}
+   if (TOP == TOPIC8) {front_right.write(DAT.toInt());}
    if (TOP == TOPIC9){if(DAT == "0"){DAT="1";lay();}}
    if (TOP == TOPIC10){if(DAT == "0"){DAT="1";pit();}}
    if (TOP == TOPIC11){if(DAT == "0"){DAT="1";getup();}}
@@ -141,89 +141,89 @@ void loop() {
 
 void getup(){
  tone(Passive_buzzer, 659) ;
- fl.write(90);   fr.write(90);  
- rl.write(180);   rr.write(0);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(180);   rear_right.write(0);
  delay(200);
- fl.write(90);   fr.write(90);  
- rl.write(90);   rr.write(90);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(90);   rear_right.write(90);
  digitalWrite(Passive_buzzer,HIGH);
 }
 void stand (){
  tone(Passive_buzzer, 659) ;
- fl.write(90);   fr.write(90);  
- rl.write(90);   rr.write(90);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(90);   rear_right.write(90);
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
 void sit (){ 
  tone(Passive_buzzer, 587) ;
- fl.write(30);   fr.write(150);  
- rl.write(30);   rr.write(150);
+ front_left.write(30);   front_right.write(150);  
+ rear_left.write(30);   rear_right.write(150);
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
 void lay (){ 
  tone(Passive_buzzer, 587) ;
- fl.write(0);   fr.write(180);  
- rl.write(180);   rr.write(0);
+ front_left.write(0);   front_right.write(180);  
+ rear_left.write(180);   rear_right.write(0);
  delay(400);
  digitalWrite(Passive_buzzer,HIGH);
 }
 void pit (){ 
  tone(Passive_buzzer, 587) ;
- fl.write(90);   fr.write(90);  
- rl.write(180);   rr.write(0);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(180);   rear_right.write(0);
  delay(200);
- fl.write(90);   fr.write(90);  
- rl.write(150);   rr.write(0);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(150);   rear_right.write(0);
   delay(200);
- fl.write(90);   fr.write(90);  
- rl.write(180);   rr.write(30);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(180);   rear_right.write(30);
  delay(200);
- fl.write(90);   fr.write(90);  
- rl.write(150);   rr.write(0);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(150);   rear_right.write(0);
   delay(200);
- fl.write(90);   fr.write(90);  
- rl.write(180);   rr.write(30);
+ front_left.write(90);   front_right.write(90);  
+ rear_left.write(180);   rear_right.write(30);
  digitalWrite(Passive_buzzer,HIGH);
 }
 void walk (){
  tone(Passive_buzzer, 523) ; //DO note 523 Hz
  delay (100);
  digitalWrite(Passive_buzzer,HIGH);
- fl.write(90);  fr.write(90);  
- rl.write(90);  rr.write(90);
+ front_left.write(90);  front_right.write(90);  
+ rear_left.write(90);  rear_right.write(90);
  delay (100);
- fl.write(50);
+ front_left.write(50);
  delay (100);
- rr.write(110);
+ rear_right.write(110);
  delay (100);
- fr.write(130);
+ front_right.write(130);
  delay (100);
- rl.write(60);
+ rear_left.write(60);
  
 }
 void left (){
 delay (150);
- rr.write(100);
- fl.write(100);
- rl.write(100);
- fr.write(100);
+ rear_right.write(100);
+ front_left.write(100);
+ rear_left.write(100);
+ front_right.write(100);
 delay (150);
- rr.write(95);
- rl.write(95);
- fr.write(95);
- fl.write(95);
+ rear_right.write(95);
+ rear_left.write(95);
+ front_right.write(95);
+ front_left.write(95);
 }
 void right (){
 delay (150);
- rr.write(130);
- rl.write(130);
- fr.write(130);
- fl.write(130);
+ rear_right.write(130);
+ rear_left.write(130);
+ front_right.write(130);
+ front_left.write(130);
 delay (150);
- rr.write(150);
- fl.write(150);
- rl.write(150);
- fr.write(150);
+ rear_right.write(150);
+ front_left.write(150);
+ rear_left.write(150);
+ front_right.write(150);
 }
