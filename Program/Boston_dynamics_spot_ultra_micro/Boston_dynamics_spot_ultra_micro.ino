@@ -408,30 +408,133 @@ void left()
   stand();
 }
 
-void setServo(Servo servoId, int servoPosition, int target, int speed)
+void setServoRearRight(int servoPosition, int target, int speed)
 {
-  while(servoPosition != target){
-    if(servoPosition < target){
-        servoPosition += speed;
-        servoId.write(servoPosition);
-        delay(35);
-        Serial.print(servoPosition);
-    }
-    if(servoPosition > target){
-        servoPosition -= speed;
-        servoId.write(servoPosition);
-        delay(35);
-        Serial.print(servoPosition);
-    }
-     if(abs(servoPosition - target)<speed){
+  if (servoPosition > target)
+  {
+    while(servoPosition > target)
+    {
+      servoPosition -= speed;
+      servoId.write(servoPosition);
+      delay(35);
       Serial.print(servoPosition);
-        break; 
     }
+
+    rear_right_current_position = servoPosition;
+    standby();
   }
+
+  if (servoPosition < target)
+  {
+    while(servoPosition < target){
+      servoPosition += speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    
+    rear_right_current_position = servoPosition;
+    standby();
+  }
+}
+void setServoRearLeft(int servoPosition, int target, int speed)
+{
+  if (servoPosition > target)
+  {
+    while(servoPosition > target)
+    {
+      servoPosition -= speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+
+    rear_left_current_position = servoPosition;
+    standby();
+  }
+
+  if (servoPosition < target)
+  {
+    while(servoPosition < target){
+      servoPosition += speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+
+    rear_left_current_position = servoPosition;
+    standby();
+  }
+}
+void setServoFrontRight(int servoPosition, int target, int speed)
+{
+  if (servoPosition > target)
+  {
+    while(servoPosition > target)
+    {
+      servoPosition -= speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    
+    front_right_current_position = servoPosition;
+    standby();
+  }
+
+  if (servoPosition < target)
+  {
+    while(servoPosition < target){
+      servoPosition += speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    
+    front_right_current_position = servoPosition;
+    standby();
+  }
+}
+void setServoFrontLeft(int servoPosition, int target, int speed)
+{
+  if (servoPosition > target)
+  {
+    while(servoPosition > target)
+    {
+      servoPosition -= speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    
+    front_left_current_position = servoPosition;
+    standby();
+  }
+
+  if (servoPosition < target)
+  {
+    while(servoPosition < target){
+      servoPosition += speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    
+    front_left_current_position = servoPosition;
+    standby();
+  }
+}
+
 /**if(servo == "rear_right"){rear_right_current_position = servoPosition;}
 if(servoId = rear_left){rear_left_current_position = servoPosition;}
 if(servoId = front_right){front_right_current_position = servoPosition;}
 if(servoId = front_left){front_left_current_position = servoPosition;}
 **/
 
+void standby(){
+  rear_left.write(rear_left_current_position);
+  rear_right.write(rear_left_current_position);
+
+  front_left.write(front_left_current_position);
+  front_right.write(front_right_current_position);
 }
