@@ -441,9 +441,16 @@ void setServo(Servo servoId, int servoPosition, int target, int speed)
 
 }
 
-
 /**if(servo == "rear_right"){rear_right_current_position = servoPosition;}
 if(servoId = rear_left){rear_left_current_position = servoPosition;}
 if(servoId = front_right){front_right_current_position = servoPosition;}
 if(servoId = front_left){front_left_current_position = servoPosition;}
 **/
+
+void standby(){
+  rear_left.write(rear_left_current_position);
+  rear_right.write(rear_left_current_position);
+
+  front_left.write(front_left_current_position);
+  front_right.write(front_right_current_position);
+}
