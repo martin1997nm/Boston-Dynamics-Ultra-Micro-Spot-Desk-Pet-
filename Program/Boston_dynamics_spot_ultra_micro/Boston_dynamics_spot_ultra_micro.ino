@@ -26,6 +26,10 @@ Servo rear_right;
 Servo rear_left;
 Servo front_left;
 Servo front_right;
+int rear_right_current_position=90;
+int rear_left_current_position=90;
+int front_right_current_position=90;
+int front_left_current_position=90;
 
 class myMQTTBroker: public uMQTTBroker
 {
@@ -129,7 +133,7 @@ void loop() {
    if (TOP == TOPIC2){if(DAT == "0"){walk();}}
    if (TOP == TOPIC3){if(DAT == "0"){left();}}
    if (TOP == TOPIC4){if(DAT == "0"){right();}}
-   if (TOP == TOPIC5) {rear_right.write(DAT.toInt());}
+   if (TOP == TOPIC5) {setServo(rear_right,rear_right_current_position,DAT.toInt(),5);}
    if (TOP == TOPIC6) {rear_left.write(DAT.toInt());}
    if (TOP == TOPIC7) {front_left.write(DAT.toInt());}
    if (TOP == TOPIC8) {front_right.write(DAT.toInt());}
@@ -249,4 +253,31 @@ void left (){
  delay(150);
 
  stand();
+}
+void setServo(Servo servoId ,int servoPosition,int target,int speed)
+{
+  while(servoPosition != target){
+    if(servoPosition < target){
+        servoPosition += speed;
+        servoId.write(servoPosition);
+        delay(35);
+        Serial.print(servoPosition);
+    }
+    if(servoPosition > target){
+        servoPosition -= speed;
+        servoId.write(servoPosition);
+        delay(35);
+        Serial.print(servoPosition);
+    }
+     if(abs(servoPosition - target)<speed){
+      Serial.print(servoPosition);
+        break; 
+    }
+  }
+/**if(servo == "rear_right"){rear_right_current_position = servoPosition;}
+if(servoId = rear_left){rear_left_current_position = servoPosition;}
+if(servoId = front_right){front_right_current_position = servoPosition;}
+if(servoId = front_left){front_left_current_position = servoPosition;}
+**/
+
 }
