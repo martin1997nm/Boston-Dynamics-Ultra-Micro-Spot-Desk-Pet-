@@ -20,6 +20,7 @@ String TOPIC8 = "/fr"; //front right
 String TOPIC9 = "/lay";
 String TOPIC10 = "/pit";
 String TOPIC11 = "/getup";
+String TOPIC12 = "/standby";
 
 const unsigned char Passive_buzzer = 13;
 Servo rear_right;
@@ -434,6 +435,7 @@ void setServoRearRight(int servoPosition, int target, int speed)
     }
     
     rear_right_current_position = servoPosition;
+
     standby();
   }
 }
@@ -532,9 +534,5 @@ if(servoId = front_left){front_left_current_position = servoPosition;}
 **/
 
 void standby(){
-  rear_left.write(rear_left_current_position);
-  rear_right.write(rear_left_current_position);
-
-  front_left.write(front_left_current_position);
-  front_right.write(front_right_current_position);
+  TOP = TOPIC12;
 }
