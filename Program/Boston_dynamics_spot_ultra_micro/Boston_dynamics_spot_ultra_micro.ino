@@ -185,7 +185,7 @@ void loop()
 
   if (TOP == TOPIC5)
   {
-    rear_right.write(DAT.toInt());
+    setServo(rear_right,rear_right_current_position,DAT.toInt(),5);
   }
 
   if (TOP == TOPIC6)
@@ -407,7 +407,8 @@ void left()
 
   stand();
 }
-void setServo(Servo servoId ,int servoPosition,int target,int speed)
+
+void setServo(Servo servoId, int servoPosition, int target, int speed)
 {
   while(servoPosition != target){
     if(servoPosition < target){
