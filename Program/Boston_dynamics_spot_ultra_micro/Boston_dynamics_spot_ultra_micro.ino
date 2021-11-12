@@ -185,7 +185,7 @@ void loop()
 
   if (TOP == TOPIC5)
   {
-    setServo(rear_right,rear_right_current_position,DAT.toInt(),5);
+    setServoRearRight(rear_right_current_position,DAT.toInt(),5);
   }
 
   if (TOP == TOPIC6)
@@ -415,7 +415,7 @@ void setServoRearRight(int servoPosition, int target, int speed)
     while(servoPosition > target)
     {
       servoPosition -= speed;
-      servoId.write(servoPosition);
+      rear_right.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -428,7 +428,7 @@ void setServoRearRight(int servoPosition, int target, int speed)
   {
     while(servoPosition < target){
       servoPosition += speed;
-      servoId.write(servoPosition);
+      rear_right.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -444,7 +444,7 @@ void setServoRearLeft(int servoPosition, int target, int speed)
     while(servoPosition > target)
     {
       servoPosition -= speed;
-      servoId.write(servoPosition);
+      rear_left.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -457,7 +457,7 @@ void setServoRearLeft(int servoPosition, int target, int speed)
   {
     while(servoPosition < target){
       servoPosition += speed;
-      servoId.write(servoPosition);
+      rear_left.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -473,7 +473,7 @@ void setServoFrontRight(int servoPosition, int target, int speed)
     while(servoPosition > target)
     {
       servoPosition -= speed;
-      servoId.write(servoPosition);
+      front_right.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -486,7 +486,7 @@ void setServoFrontRight(int servoPosition, int target, int speed)
   {
     while(servoPosition < target){
       servoPosition += speed;
-      servoId.write(servoPosition);
+      front_right.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -502,7 +502,7 @@ void setServoFrontLeft(int servoPosition, int target, int speed)
     while(servoPosition > target)
     {
       servoPosition -= speed;
-      servoId.write(servoPosition);
+      front_left.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
@@ -515,7 +515,7 @@ void setServoFrontLeft(int servoPosition, int target, int speed)
   {
     while(servoPosition < target){
       servoPosition += speed;
-      servoId.write(servoPosition);
+      front_left.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
     }
