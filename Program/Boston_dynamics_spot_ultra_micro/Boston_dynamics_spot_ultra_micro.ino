@@ -410,28 +410,40 @@ void left()
 
 void setServo(Servo servoId, int servoPosition, int target, int speed)
 {
-  while(servoPosition != target){
-    if(servoPosition < target){
-        servoPosition += speed;
-        servoId.write(servoPosition);
-        delay(35);
-        Serial.print(servoPosition);
-    }
-    if(servoPosition > target){
-        servoPosition -= speed;
-        servoId.write(servoPosition);
-        delay(35);
-        Serial.print(servoPosition);
-    }
-     if(abs(servoPosition - target)<speed){
+  if (servoPosition > target)
+  {
+    while(servoPosition > target)
+    {
+      servoPosition -= speed;
+      servoId.write(servoPosition);
+      delay(35);
       Serial.print(servoPosition);
-        break; 
     }
+    //! somehow stop calling this.
+    //? change topic?
+    //? set speed to 0?
+    //? break/continue?
   }
+
+  if (servoPosition < target)
+  {
+    while(servoPosition < target){
+      servoPosition += speed;
+      servoId.write(servoPosition);
+      delay(35);
+      Serial.print(servoPosition);
+    }
+    //! somehow stop calling this.
+    //? change topic?
+    //? set speed to 0?
+    //? break/continue?
+  }
+
+}
+
+
 /**if(servo == "rear_right"){rear_right_current_position = servoPosition;}
 if(servoId = rear_left){rear_left_current_position = servoPosition;}
 if(servoId = front_right){front_right_current_position = servoPosition;}
 if(servoId = front_left){front_left_current_position = servoPosition;}
 **/
-
-}
