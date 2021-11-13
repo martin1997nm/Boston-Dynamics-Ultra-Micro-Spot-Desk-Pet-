@@ -382,7 +382,7 @@ void walk()
 
   setServoRearLeft(rear_left_current_position,60,servo_speed);
   
-  TOP = TOPIC2;
+
 }
 
 void right()
@@ -442,7 +442,6 @@ void setServoRearRight(int servoPosition, int target, int speed)
     }
 
     rear_right_current_position = servoPosition;
-    standby();
   }
 
   if (servoPosition < target)
@@ -453,11 +452,10 @@ void setServoRearRight(int servoPosition, int target, int speed)
       delay(35);
       Serial.print(servoPosition);
     }
-    
     rear_right_current_position = servoPosition;
 
-    standby();
   }
+  rear_right.write(rear_right_current_position);
 }
 void setServoRearLeft(int servoPosition, int target, int speed)
 {
@@ -472,7 +470,6 @@ void setServoRearLeft(int servoPosition, int target, int speed)
     }
 
     rear_left_current_position = servoPosition;
-    standby();
   }
 
   if (servoPosition < target)
@@ -485,8 +482,8 @@ void setServoRearLeft(int servoPosition, int target, int speed)
     }
 
     rear_left_current_position = servoPosition;
-    standby();
   }
+  rear_left.write(rear_left_current_position);
 }
 void setServoFrontRight(int servoPosition, int target, int speed)
 {
@@ -501,7 +498,6 @@ void setServoFrontRight(int servoPosition, int target, int speed)
     }
     
     front_right_current_position = servoPosition;
-    standby();
   }
 
   if (servoPosition < target)
@@ -514,8 +510,8 @@ void setServoFrontRight(int servoPosition, int target, int speed)
     }
     
     front_right_current_position = servoPosition;
-    standby();
   }
+  front_right.write(front_right_current_position);
 }
 void setServoFrontLeft(int servoPosition, int target, int speed)
 {
@@ -528,9 +524,7 @@ void setServoFrontLeft(int servoPosition, int target, int speed)
       delay(35);
       Serial.print(servoPosition);
     }
-    
     front_left_current_position = servoPosition;
-    standby();
   }
 
   if (servoPosition < target)
@@ -540,12 +534,8 @@ void setServoFrontLeft(int servoPosition, int target, int speed)
       front_left.write(servoPosition);
       delay(35);
       Serial.print(servoPosition);
-    }
-    
+    } 
     front_left_current_position = servoPosition;
-    standby();
   }
-}
-void standby(){
-  TOP = TOPIC12;
+  front_right.write(front_right_current_position);
 }
