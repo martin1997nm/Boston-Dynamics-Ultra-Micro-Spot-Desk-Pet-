@@ -1,9 +1,7 @@
 #VRML_OBJ R2021b utf8
-DEF fr Solid {
-  rotation 1 0 0 -1.5708
-  scale 0.01 0.01 0.01
+Transform {
   children [
-    Solid {
+    Transform {
       children [
         Shape {
           appearance PBRAppearance {
@@ -29,8 +27,6 @@ DEF fr Solid {
           }
         }
       ]
-      name ""
     }
   ]
-  name "fr_leg"
 }
