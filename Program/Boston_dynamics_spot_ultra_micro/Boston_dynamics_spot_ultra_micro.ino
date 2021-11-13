@@ -21,16 +21,19 @@ String TOPIC9 = "/lay";
 String TOPIC10 = "/pit";
 String TOPIC11 = "/getup";
 String TOPIC12 = "/standby";
+String TOPIC13 = "/speed";
+
 
 const unsigned char Passive_buzzer = 13;
 Servo rear_right;
 Servo rear_left;
 Servo front_left;
 Servo front_right;
-int rear_right_current_position=90;
-int rear_left_current_position=90;
-int front_right_current_position=90;
-int front_left_current_position=90;
+int servo_speed = 5;
+int rear_right_current_position = 90;
+int rear_left_current_position = 90;
+int front_right_current_position = 90;
+int front_left_current_position = 90;
 
 class myMQTTBroker : public uMQTTBroker
 {
@@ -186,22 +189,22 @@ void loop()
 
   if (TOP == TOPIC5)
   {
-    setServoRearRight(rear_right_current_position,DAT.toInt(),5);
+    setServoRearRight(rear_right_current_position,DAT.toInt(),servo_speed);
   }
 
   if (TOP == TOPIC6)
   {
-    rear_left.write(DAT.toInt());
+    setServoRearLeft(rear_left_current_position,DAT.toInt(),servo_speed);
   }
 
   if (TOP == TOPIC7)
   {
-    front_left.write(DAT.toInt());
+    setServoFrontLeft(front_left_current_position,DAT.toInt(),servo_speed);
   }
 
   if (TOP == TOPIC8)
   {
-    front_right.write(DAT.toInt());
+    setServoFrontRight(front_right_current_position,DAT.toInt(),servo_speed);
   }
 
   if (TOP == TOPIC9)
@@ -229,6 +232,10 @@ void loop()
       DAT = "1";
       getup();
     }
+  }
+  if (TOP == TOPIC13)
+  {
+    servo_speed = DAT.toInt();
   }
 
   delay(300);
@@ -526,13 +533,6 @@ void setServoFrontLeft(int servoPosition, int target, int speed)
     standby();
   }
 }
-
-/**if(servo == "rear_right"){rear_right_current_position = servoPosition;}
-if(servoId = rear_left){rear_left_current_position = servoPosition;}
-if(servoId = front_right){front_right_current_position = servoPosition;}
-if(servoId = front_left){front_left_current_position = servoPosition;}
-**/
-
 void standby(){
   TOP = TOPIC12;
 }
