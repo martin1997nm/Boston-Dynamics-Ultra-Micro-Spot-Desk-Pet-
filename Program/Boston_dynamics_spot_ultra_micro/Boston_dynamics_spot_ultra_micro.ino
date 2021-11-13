@@ -354,22 +354,35 @@ void walk()
   front_right.write(90);
   rear_left.write(90);
   rear_right.write(90);
+  rear_right_current_position = 90;
+  rear_left_current_position = 90;
+  front_right_current_position = 90;
+  front_left_current_position = 90;
+  
+  /*
+  This is not doable cause it's not synced due to multiple functions and the robot just makes random moves
+  setServoFrontLeft(front_left_current_position,90,servo_speed);
+  setServoFrontRight(front_right_current_position,90,servo_speed);
+  setServoRearLeft(rear_left_current_position,90,servo_speed);
+  setServoRearRight(rear_right_current_position,90,servo_speed);
+  */
+  delay(200);
+
+  setServoFrontLeft(front_left_current_position,50,servo_speed);
 
   delay(200);
 
-  front_left.write(50);
+  setServoRearRight(rear_right_current_position,110,servo_speed);
 
   delay(200);
 
-  rear_right.write(110);
+  setServoFrontRight(front_right_current_position,130,servo_speed);
 
   delay(200);
 
-  front_right.write(130);
-
-  delay(200);
-
-  rear_left.write(60);
+  setServoRearLeft(rear_left_current_position,60,servo_speed);
+  
+  TOP = TOPIC2;
 }
 
 void right()
