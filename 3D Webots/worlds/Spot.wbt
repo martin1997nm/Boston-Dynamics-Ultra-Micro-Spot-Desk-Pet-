@@ -6,8 +6,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.5053955199649952 0.8338458561003481 0.22198300985343386 5.721899963710346
-  position -0.30755196578554866 0.22321123469228998 1.0023895613269134
+  orientation -0.3403271479040685 -0.9295236303351636 -0.14199736986303776 0.7951476065715016
+  position -0.18728531174247828 0.13669990333314824 0.13815782393878323
 }
 TexturedBackground {
 }
@@ -18,6 +18,9 @@ Floor {
   tileSize 0.18 0.18
 }
 Robot {
+  translation 1.49637e-35 -0.004525 2.03924e-08
+  rotation 1 2.33993e-34 9.82178e-34 -1.5707953071795862
+  scale 0.0005 0.0005 0.0005
   children [
     Shape {
       appearance PBRAppearance {
@@ -27,7 +30,7 @@ Robot {
       }
       geometry DEF base_link Mesh {
         url [
-          "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/base_link.stl"
+          "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/base_link.stl"
         ]
       }
     }
@@ -45,7 +48,7 @@ Robot {
               }
               geometry DEF servo_1 Mesh {
                 url [
-                  "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/servo_1.stl"
+                  "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/servo_1.stl"
                 ]
               }
             }
@@ -68,7 +71,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.01078 0.008137 -0.000224
+            translation 0.010780000000000034 0.008137000000005097 -0.00022400000001634762
+            rotation -0.9933273440620319 -0.027480073406798974 0.11200729040659153 3.4536340578957205e-14
             children [
               Transform {
                 translation -0.0877 -0.13723 -0.105748
@@ -81,7 +85,7 @@ Robot {
                     }
                     geometry DEF fl_leg_1 Mesh {
                       url [
-                        "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/fl_leg_1.stl"
+                        "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/fl_leg_1.stl"
                       ]
                     }
                   }
@@ -142,7 +146,7 @@ Robot {
               }
               geometry DEF servo__3__1 Mesh {
                 url [
-                  "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/servo__3__1.stl"
+                  "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/servo__3__1.stl"
                 ]
               }
             }
@@ -165,7 +169,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.01078 0.008137 -0.000224
+            translation 0.010780000000000048 0.008137000000005125 -0.00022400000003328828
+            rotation -0.9933273440613637 -0.027480073403136646 0.11200729041341571 3.4536340578980435e-14
             children [
               Transform {
                 translation -0.08774 -0.251227 -0.106485
@@ -178,7 +183,7 @@ Robot {
                     }
                     geometry DEF fl_leg__1__1 Mesh {
                       url [
-                        "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/fl_leg__1__1.stl"
+                        "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/fl_leg__1__1.stl"
                       ]
                     }
                   }
@@ -239,7 +244,7 @@ Robot {
               }
               geometry DEF servo__1__1 Mesh {
                 url [
-                  "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/servo__1__1.stl"
+                  "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/servo__1__1.stl"
                 ]
               }
             }
@@ -263,7 +268,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.01078 0.008137 0.000224
+            translation -0.010779999999999935 0.008137000000005097 0.0002239999999824663
+            rotation -0.9933273440616592 -0.027480073401991573 0.11200729041107547 3.453634057897016e-14
             children [
               Transform {
                 translation -0.03204 -0.13723 -0.106196
@@ -276,7 +282,7 @@ Robot {
                     }
                     geometry DEF fr_leg_1 Mesh {
                       url [
-                        "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/fr_leg_1.stl"
+                        "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/fr_leg_1.stl"
                       ]
                     }
                   }
@@ -337,7 +343,7 @@ Robot {
               }
               geometry DEF servo__2__1 Mesh {
                 url [
-                  "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/servo__2__1.stl"
+                  "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/servo__2__1.stl"
                 ]
               }
             }
@@ -361,7 +367,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.01078 0.008137 0.000224
+            translation -0.010779999999999929 0.008137000000005177 0.0002239999999824663
+            rotation -0.9933273440623734 -0.027480073404935853 0.1120072904040191 3.453634057894533e-14
             children [
               Transform {
                 translation -0.03194 -0.251227 -0.106933
@@ -374,7 +381,7 @@ Robot {
                     }
                     geometry DEF rr_leg_1 Mesh {
                       url [
-                        "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/rr_leg_1.stl"
+                        "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/rr_leg_1.stl"
                       ]
                     }
                   }
@@ -435,7 +442,7 @@ Robot {
               }
               geometry DEF lid_1 Mesh {
                 url [
-                  "D:ReposBoston-Dynamics-Ultra-Micro-Spot-Desk-Pet-3D Webots/spotURDF_description/meshes/lid_1.stl"
+                  "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/3D Webots/protos/lid_1.stl"
                 ]
               }
             }
