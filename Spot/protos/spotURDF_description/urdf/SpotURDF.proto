@@ -1,0 +1,503 @@
+#VRML_SIM R2021b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the SpotURDF
+# Extracted from: spotURDF.xacro
+
+PROTO SpotURDF [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 1 0 0
+  field  SFString    name            "SpotURDF"  # Is `Robot.name`.
+  field  SFString    controller      "void"      # Is `Robot.controller`.
+  field  MFString    controllerArgs  []          # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""          # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE       # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE       # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          transparency 0.000000
+          roughness 1.000000
+          metalness 0
+          emissiveColor 0.000000 0.000000 0.000000
+        }
+        geometry DEF base_link Mesh {
+          url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/base_link.stl"
+        }
+      }
+      Solid {
+        translation 0.076920 0.129093 0.105972
+        rotation 0.000000 1.000000 0.000000 0.000000
+        children [
+          Transform {
+            translation -0.076920 -0.129093 -0.105972
+            rotation 0.000000 1.000000 0.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry DEF servo_1 Mesh {
+                  url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/servo_1.stl"
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 1.000000 -0.000000 -0.000000
+              anchor 0.010780 0.008137 -0.000224
+              dampingConstant 0.0
+              staticFriction 0.0
+            }
+            device [
+              RotationalMotor {
+                name "Rev6"
+                maxVelocity 100.0
+                minPosition -2.007129
+                maxPosition 1.745329
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "Rev6_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.010780 0.008137 -0.000224
+              rotation 0.000000 1.000000 0.000000 0.000000
+              children [
+                Transform {
+                  translation -0.087700 -0.137230 -0.105748
+                  rotation 0.000000 1.000000 0.000000 0.000000
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.500000 0.500000 0.500000
+                        transparency 0.000000
+                        roughness 1.000000
+                        metalness 0
+                        emissiveColor 0.000000 0.000000 0.000000
+                      }
+                      geometry DEF fl_leg_1 Mesh {
+                        url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/fl_leg_1.stl"
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "fl_leg_1"
+              boundingObject Transform {
+                translation -0.087700 -0.137230 -0.105748
+                rotation 0.000000 1.000000 0.000000 0.000000
+                children [
+                  USE fl_leg_1
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.023064
+                centerOfMass [ 0.005828 0.013045 -0.028256 ]
+                inertiaMatrix [
+                  2.300000e-05 1.800000e-05 6.000000e-06
+                  0.000000e+00 0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+        ]
+        name "servo_1"
+        boundingObject Transform {
+          translation -0.076920 -0.129093 -0.105972
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            USE servo_1
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.010362
+          centerOfMass [ -0.004039 0.013205 -0.000224 ]
+          inertiaMatrix [
+            1.000000e-06 1.000000e-06 1.000000e-06
+            0.000000e+00 0.000000e+00 -0.000000e+00
+          ]
+        }
+      }
+      Solid {
+        translation 0.076960 0.243090 0.106709
+        rotation 0.000000 1.000000 0.000000 0.000000
+        children [
+          Transform {
+            translation -0.076960 -0.243090 -0.106709
+            rotation 0.000000 1.000000 0.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry DEF servo__3__1 Mesh {
+                  url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/servo__3__1.stl"
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 1.000000 -0.000000 0.000000
+              anchor 0.010780 0.008137 -0.000224
+              dampingConstant 0.0
+              staticFriction 0.0
+            }
+            device [
+              RotationalMotor {
+                name "Rev7"
+                maxVelocity 100.0
+                minPosition -1.745329
+                maxPosition 2.268928
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "Rev7_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.010780 0.008137 -0.000224
+              rotation 0.000000 1.000000 0.000000 0.000000
+              children [
+                Transform {
+                  translation -0.087740 -0.251227 -0.106485
+                  rotation 0.000000 1.000000 0.000000 0.000000
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.500000 0.500000 0.500000
+                        transparency 0.000000
+                        roughness 1.000000
+                        metalness 0
+                        emissiveColor 0.000000 0.000000 0.000000
+                      }
+                      geometry DEF fl_leg__1__1 Mesh {
+                        url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/fl_leg__1__1.stl"
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "fl_leg__1__1"
+              boundingObject Transform {
+                translation -0.087740 -0.251227 -0.106485
+                rotation 0.000000 1.000000 0.000000 0.000000
+                children [
+                  USE fl_leg__1__1
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.023064
+                centerOfMass [ 0.005829 0.014739 -0.027411 ]
+                inertiaMatrix [
+                  2.300000e-05 1.700000e-05 6.000000e-06
+                  0.000000e+00 0.000000e+00 1.000000e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "servo__3__1"
+        boundingObject Transform {
+          translation -0.076960 -0.243090 -0.106709
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            USE servo__3__1
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.010362
+          centerOfMass [ -0.004038 0.013205 -0.000224 ]
+          inertiaMatrix [
+            1.000000e-06 1.000000e-06 1.000000e-06
+            0.000000e+00 0.000000e+00 -0.000000e+00
+          ]
+        }
+      }
+      Solid {
+        translation 0.042820 0.129093 0.105972
+        rotation 0.000000 1.000000 0.000000 0.000000
+        children [
+          Transform {
+            translation -0.042820 -0.129093 -0.105972
+            rotation 0.000000 1.000000 0.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry DEF servo__1__1 Mesh {
+                  url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/servo__1__1.stl"
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -1.000000 -0.000000 0.000000
+              anchor -0.010780 0.008137 0.000224
+              dampingConstant 0.0
+              staticFriction 0.0
+            }
+            device [
+              RotationalMotor {
+                name "Rev5"
+                maxVelocity 100.0
+                minPosition -1.745329
+                maxPosition 2.007129
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "Rev5_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.010780 0.008137 0.000224
+              rotation 0.000000 1.000000 0.000000 0.000000
+              children [
+                Transform {
+                  translation -0.032040 -0.137230 -0.106196
+                  rotation 0.000000 1.000000 0.000000 0.000000
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.500000 0.500000 0.500000
+                        transparency 0.000000
+                        roughness 1.000000
+                        metalness 0
+                        emissiveColor 0.000000 0.000000 0.000000
+                      }
+                      geometry DEF fr_leg_1 Mesh {
+                        url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/fr_leg_1.stl"
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "fr_leg_1"
+              boundingObject Transform {
+                translation -0.032040 -0.137230 -0.106196
+                rotation 0.000000 1.000000 0.000000 0.000000
+                children [
+                  USE fr_leg_1
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.023064
+                centerOfMass [ -0.005829 0.014050 -0.027769 ]
+                inertiaMatrix [
+                  2.300000e-05 1.800000e-05 6.000000e-06
+                  -0.000000e+00 -0.000000e+00 1.000000e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "servo__1__1"
+        boundingObject Transform {
+          translation -0.042820 -0.129093 -0.105972
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            USE servo__1__1
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.010362
+          centerOfMass [ 0.004038 0.013205 0.000225 ]
+          inertiaMatrix [
+            1.000000e-06 1.000000e-06 1.000000e-06
+            -0.000000e+00 0.000000e+00 0.000000e+00
+          ]
+        }
+      }
+      Solid {
+        translation 0.042720 0.243090 0.106709
+        rotation 0.000000 1.000000 0.000000 0.000000
+        children [
+          Transform {
+            translation -0.042720 -0.243090 -0.106709
+            rotation 0.000000 1.000000 0.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry DEF servo__2__1 Mesh {
+                  url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/servo__2__1.stl"
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis -1.000000 -0.000000 -0.000000
+              anchor -0.010780 0.008137 0.000224
+              dampingConstant 0.0
+              staticFriction 0.0
+            }
+            device [
+              RotationalMotor {
+                name "Rev8"
+                maxVelocity 100.0
+                minPosition -2.268928
+                maxPosition 1.745329
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "Rev8_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.010780 0.008137 0.000224
+              rotation 0.000000 1.000000 0.000000 0.000000
+              children [
+                Transform {
+                  translation -0.031940 -0.251227 -0.106933
+                  rotation 0.000000 1.000000 0.000000 0.000000
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.500000 0.500000 0.500000
+                        transparency 0.000000
+                        roughness 1.000000
+                        metalness 0
+                        emissiveColor 0.000000 0.000000 0.000000
+                      }
+                      geometry DEF rr_leg_1 Mesh {
+                        url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/rr_leg_1.stl"
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "rr_leg_1"
+              boundingObject Transform {
+                translation -0.031940 -0.251227 -0.106933
+                rotation 0.000000 1.000000 0.000000 0.000000
+                children [
+                  USE rr_leg_1
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.023064
+                centerOfMass [ -0.005829 0.013172 -0.028197 ]
+                inertiaMatrix [
+                  2.300000e-05 1.800000e-05 6.000000e-06
+                  -0.000000e+00 -0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+        ]
+        name "servo__2__1"
+        boundingObject Transform {
+          translation -0.042720 -0.243090 -0.106709
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            USE servo__2__1
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.010362
+          centerOfMass [ 0.004038 0.013205 0.000225 ]
+          inertiaMatrix [
+            1.000000e-06 1.000000e-06 1.000000e-06
+            -0.000000e+00 0.000000e+00 0.000000e+00
+          ]
+        }
+      }
+      Solid {
+        translation 0.044540 0.239750 0.119878
+        rotation 0.000000 1.000000 0.000000 0.000000
+        children [
+          Transform {
+            translation -0.044540 -0.239750 -0.119878
+            rotation 0.000000 1.000000 0.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry DEF lid_1 Mesh {
+                  url "C:/Users/Martin/Desktop/Boston-Dynamics-Ultra-Micro-Spot-Desk-Pet-/Spot/protos/spotURDF_description/meshes/lid_1.stl"
+                }
+              }
+            ]
+          }
+        ]
+        name "lid_1"
+        boundingObject Transform {
+          translation -0.044540 -0.239750 -0.119878
+          rotation 0.000000 1.000000 0.000000 0.000000
+          children [
+            USE lid_1
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.012474
+          centerOfMass [ 0.015282 -0.032824 0.001003 ]
+          inertiaMatrix [
+            1.200000e-05 1.000000e-06 1.300000e-05
+            -0.000000e+00 0.000000e+00 0.000000e+00
+          ]
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE base_link
+    physics Physics {
+      density -1
+      mass 0.155938
+      centerOfMass [ 0.059712 0.191541 0.103792 ]
+      inertiaMatrix [
+        3.850000e-04 4.800000e-05 4.030000e-04
+        0.000000e+00 0.000000e+00 -1.200000e-05
+      ]
+    }
+  }
+}

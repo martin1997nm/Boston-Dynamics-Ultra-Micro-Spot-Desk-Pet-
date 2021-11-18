@@ -1,0 +1,4 @@
+python -m urdf2webots.importer --input=spotURDF.xacro [--output=spotURDF.proto] [--box-collision] [--normal] [--static-base] [--tool-slot=linkName] [--name-to-def] [--help]
+
+
+python -m urdf2webots.importer --input=spotURDF.xacro --disable-mesh-optimization
