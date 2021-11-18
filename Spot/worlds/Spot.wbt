@@ -5,8 +5,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.05178831292557146 0.993156498430964 0.10468113616439934 2.4203889944915176
-  position 0.1958212660507227 0.08666803732031622 -0.07422115806697623
+  orientation 0.09152557008365174 0.9823522930564517 0.1631166525759837 4.496920866978151
+  position -0.16010302976844623 0.10397369509765603 0.10559633089584931
 }
 TexturedBackground {
 }
@@ -71,8 +71,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.0107800000000001 0.008137000000391689 -0.00022399999999940697
-            rotation -1 2.149391775674303e-13 3.765876499528531e-13 1.1102230246251565e-16
+            translation 0.0107800000000001 0.008137000000391689 -0.00022400000008072213
+            rotation 1 0 0 0
             children [
               Transform {
                 translation -0.0877 -0.13723 -0.105748
@@ -122,7 +122,7 @@ Robot {
       }
       physics Physics {
         density -1
-        mass 0.010362
+        mass 0.5
         centerOfMass [
           -0.004039 0.013205 -0.000224
         ]
@@ -171,8 +171,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation 0.010780000000000286 0.008137000000012218 -0.0002240000012191344
-            rotation -1 -2.2026824808563106e-14 -2.2026824808563106e-14 1.1102230246251565e-15
+            translation 0.010780000000000471 0.008137000000012218 -0.00022400000102939903
+            rotation 1 0 0 0
             children [
               Transform {
                 translation -0.08774 -0.251227 -0.106485
@@ -222,7 +222,7 @@ Robot {
       }
       physics Physics {
         density -1
-        mass 0.010362
+        mass 0.5
         centerOfMass [
           -0.004038 0.013205 -0.000224
         ]
@@ -272,8 +272,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.010779999999999903 0.008136999999903798 0.00022399999910494017
-            rotation -1 5.417888360170764e-15 -1.1457501614131616e-14 1.1102230246251565e-15
+            translation -0.010779999999999809 0.008136999999795377 0.00022399999910494017
+            rotation -1 0 0 0
             children [
               Transform {
                 translation -0.03204 -0.13723 -0.106196
@@ -323,7 +323,7 @@ Robot {
       }
       physics Physics {
         density -1
-        mass 0.010362
+        mass 0.5
         centerOfMass [
           0.004038 0.013205 0.000225
         ]
@@ -372,8 +372,8 @@ Robot {
             }
           ]
           endPoint Solid {
-            translation -0.010779999999999903 0.008136999999795377 0.0002239999999723019
-            rotation 1 2.9401768376280007e-15 2.0213715758692506e-15 3.219646771412954e-15
+            translation -0.010779999999999802 0.008136999999795377 0.00022400000040598278
+            rotation -1 0 0 0
             children [
               Transform {
                 translation -0.03194 -0.251227 -0.106933
@@ -423,7 +423,7 @@ Robot {
       }
       physics Physics {
         density -1
-        mass 0.010362
+        mass 0.5
         centerOfMass [
           0.004038 0.013205 0.000225
         ]
@@ -435,7 +435,9 @@ Robot {
     }
   ]
   name "SpotURDF"
-  boundingObject USE fl_leg_1
+  boundingObject USE base_link
   physics Physics {
+    density 1
+    mass 1
   }
 }
