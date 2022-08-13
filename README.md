@@ -5,8 +5,8 @@ The moves are really limited due to the 4 servo setup and the development is rea
 so if you have suggestions or want to take part in the development feel free to edit the code.
 
 
-#Version 1
-## You will need
+## Version 1
+### You will need
 
 - ESP 8266 Wemos D1 Mini
 - Passive buzzer
@@ -16,8 +16,8 @@ so if you have suggestions or want to take part in the development feel free to 
 - Soldering iron, wires, standard 1.54 pin headers
 - Screwdriver
 
-#Version 2
-## You will need
+## Version 2
+### You will need
 
 - MH-ET LIVE D1 Mini ESP32
 - Passive buzzer
